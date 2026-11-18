@@ -2,11 +2,21 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Steps {
 
+    WebDriver driver;
+
     @Given("I am on the home page of the website")
     public void i_am_on_the_home_page_of_the_website() {
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+        driver.get("https://ndosisimplifiedautomation.vercel.app/");
 
     }
     @And("I click login button")
@@ -14,7 +24,7 @@ public class Steps {
 
     }
     @And("I enter username (.*)$")
-    public void i_enter_username(String password) {
+    public void i_enter_username(String username) {
 
     }
     @And("I enter password (.*)$")
