@@ -10,6 +10,6 @@ Feature: Login
 
     Examples:
       | username | password |
-      | user1    | pass1    |
+      | Jamesbonds@example.com    | @12345678    |
     #  | user2    | pass2    |
 
